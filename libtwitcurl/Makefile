@@ -31,15 +31,15 @@ target: $(SRC) $(LIBNAME).h
 
 #clean project.
 clean:
-	$(REMOVE) lib$(LIBNAME)*.so.1.0
-	$(REMOVE) $(LIBNAME).o
-	$(REMOVE) *.o
-	$(REMOVE) $(LIBRARY_DIR)/lib$(LIBNAME).so*
+	rm -f lib$(LIBNAME)*.so.1.0
+	rm -f $(LIBNAME).o
+	rm -f *.o
+	rm -f $(LIBRARY_DIR)/lib$(LIBNAME).so*
 
 # Install library to local openwrt library directory
 install: all
-	$(COPY) lib$(LIBNAME).so.1.0 $(LIBRARY_DIR)
-	$(COPY) $(LIBNAME).h $(INCLUDE_DIR)/
-	$(COPY) oauthlib.h $(INCLUDE_DIR)/
+	install -m644 lib$(LIBNAME).so.1.0 $(LIBRARY_DIR)
+	install -m644 $(LIBNAME).h $(INCLUDE_DIR)/
+	install -m644 oauthlib.h $(INCLUDE_DIR)/
 	ln -sf $(LIBRARY_DIR)/lib$(LIBNAME).so.1.0 $(LIBRARY_DIR)/lib$(LIBNAME).so
 	ln -sf $(LIBRARY_DIR)/lib$(LIBNAME).so.1.0 $(LIBRARY_DIR)/lib$(LIBNAME).so.1
