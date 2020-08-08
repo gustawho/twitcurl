@@ -25,8 +25,10 @@ void CHMAC_SHA1::HMAC_SHA1(BYTE *text, int text_len, BYTE *key, int key_len, BYT
 
 		CSHA1::GetHash((UINT_8 *)SHA1_Key);
 	}
-	else
-		memcpy(SHA1_Key, key, key_len);
+    else
+    {
+        memcpy(SHA1_Key, key, key_len);
+    }
 
 	/* STEP 2 */
 	for (size_t i=0; i<sizeof(m_ipad); i++)

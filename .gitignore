@@ -1,0 +1,9 @@
+*.kdev4
+*.qmlc
+build*
+BUILD
+*.pro
+*.pro.user
+*~
+*.o
+*.so
