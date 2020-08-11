@@ -22,6 +22,6 @@ include(GNUInstallDirs)
 configure_file(twitcurl.pc.in twitcurl.pc @ONLY)
 install(FILES ${CMAKE_BINARY_DIR}/twitcurl.pc DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/pkgconfig)
 
-install(TARGETS twitcurl
+install(TARGETS twitcurl oauthlib
 	LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
 	PUBLIC_HEADER DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
