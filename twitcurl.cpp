@@ -2263,7 +2263,7 @@ bool twitCurl::oAuthAccessToken()
 *
 * @method: twitCurl::oAuthHandlePIN
 *
-* @description: method to handle user's PIN code from the authentiation URLs
+* @description: method to handle user's PIN code from the authentication URLs
 *
 * @input: none
 *

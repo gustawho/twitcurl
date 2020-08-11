@@ -1,18 +1,20 @@
-cmake_minimum_required(VERSION 3.0)
+cmake_minimum_required(VERSION 3.11)
 
 project(twitcurl VERSION 1.0 LANGUAGES CXX)
 
-FIND_PACKAGE(PkgConfig)
+find_package(PkgConfig)
 include_directories (${PKGS_INCLUDE_DIRS})
 
 set(twitSrcs base64.cpp HMAC_SHA1.cpp oauthlib.cpp SHA1.cpp urlencode.cpp twitcurl.cpp)
 
 add_library(twitcurl SHARED ${twitSrcs})
+add_library(oauthlib SHARED oauthlib.cpp)
 
 set_target_properties(twitcurl PROPERTIES SOVERSION 1)
 set_target_properties(twitcurl PROPERTIES PUBLIC_HEADER twitcurl.h)
 
 set_property(TARGET twitcurl PROPERTY CXX_STANDARD 17)
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC")
 
 include(GNUInstallDirs)
 
